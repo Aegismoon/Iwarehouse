@@ -60,8 +60,8 @@ int main (int argc, char* argv[])
 
 //  setting request string
 
-   string command;
-   loopFunc(command);
+ 
+   loopFunc();
 
    return 0;
 }
@@ -75,7 +75,9 @@ void loopFunc (string command)
 
 	// infinite loop
 	while (1)
-	{
+	{	
+		string command;
+		
 		if (cin >> command)
 		{
 		//	check wich command is written
@@ -83,14 +85,14 @@ void loopFunc (string command)
 			
 		    switch (switcher)
 			{
-				case  add  :  addFunc();    break;
-				case  sort :  sortFunc();   break;
-				case  clear: clearFunc();   break;
-				case  help : helpFunc();    break;
-				case  close: closeFunc();	break;
-				case  save : saveFunc();    break;
-				case  load : loadFunc();    break;
-				default: cout << "\nThis causes no effect in program, use >help for assistance"; break;
+				case  add  :  addFunc();   loopFunc();
+				case  sort :  sortFunc();   loopFunc();
+				case  clear:  clearFunc();   loopFunc();
+				case  help :  helpFunc();   loopFunc();
+				case  close:  closeFunc();	loopFunc();
+				case  save :  saveFunc();    loopFunc();
+				case  load :  loadFunc();   loopFunc();;
+				default: cout << "\nThis causes no effect in program, use >help for assistance"; loopFunc();
 				// also recursive solution required without stack overflow
 				
 			}// switch breaks

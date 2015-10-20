@@ -92,6 +92,7 @@ void loopFunc (string command)
 				case  load : loadFunc();    break;
 				default: cout << "\nThis causes no effect in program, use >help for assistance"; break;
 				// also recursive solution required without stack overflow
+				
 			}// switch breaks
 		} // command enter condition break
 

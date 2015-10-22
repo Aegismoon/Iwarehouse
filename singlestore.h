@@ -45,9 +45,6 @@ class singlehouse
        singlehouse(singlehouse const&);
 	   singlehouse& operator= (singlehouse const&);
 
-
-
-
 };
 
 //-----------------------------------------------
@@ -57,13 +54,13 @@ class storedata
     public:
     storedata();
 
-    void setstore(store&);
-    store& getstore();
+    void getItem(item&);
+    item& setItem();
 
-    ~storedata();
+    ~storedata(item&);
 
     private:
-    struct store
+    struct item
 {
     double price;
     string title;
@@ -107,7 +104,7 @@ class environment
 	   environment& operator= (environment const&);
 
 
-}
+};
 
 
 };

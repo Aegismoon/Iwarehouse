@@ -1,11 +1,26 @@
 #include "singlestore.h"
 
-singlestore::singlestore()
+singlehouse::singlehouse()
 {
-    //ctor
+   ID = 1, Name = "Muratwarehouse" //ctor
 }
 
-singlestore::~singlestore()
+singlehouse::~singlehouse(singlehouse const& object)
+{
+    delete object;
+    //dtor
+}
+
+
+
+storedata::storedata()
+{
+
+}
+
+storedata::~storedata()
 {
     //dtor
 }
+
+

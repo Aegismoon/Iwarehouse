@@ -47,7 +47,7 @@ class singlehouse
 
 };
 
-//-----------------------------------------------
+//---------------dataclass
 class storedata
 
 {
@@ -76,7 +76,7 @@ class storedata
 };
 
 
-
+//------------------------ environment class
 class environment
 {
 
@@ -97,9 +97,10 @@ class environment
 
 
      private:
-
-       environment();
-       ~environment(environment&);
+        // ctor creates programm shell as a Singleton
+       environment(){ environment shell; loop(); };
+       // dtor release memory  while program  closing
+       ~environment(environment& shell) {delete shell};
        environment(environment const&);
 	   environment& operator= (environment const&);
 

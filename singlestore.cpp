@@ -11,16 +11,24 @@ singlehouse::~singlehouse(singlehouse const& object)
     //dtor
 }
 
-
-
 storedata::storedata()
 {
-
+    item myitem = {1,"Myitem",1,1,1,1,1,0};
 }
 
-storedata::~storedata()
+storedata::~storedata(item& myitem)
 {
-    //dtor
+   delete myitem; //dtor
 }
 
+void storedata::getItem()
+{
+    return myitem;
+}
 
+item& storedata:: setItem(item& my item)
+{
+
+
+
+}
